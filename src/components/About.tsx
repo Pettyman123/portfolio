@@ -24,7 +24,7 @@ const About = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download>
+                <a href="/otaku-resume.pdf" target="_blank" rel="noopener noreferrer" download>
                   <Button className="bg-custom-bright-purple hover:bg-custom-purple">
                     Download Resume
                   </Button>
