@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from './ui/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -21,14 +22,28 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Replace these with your actual EmailJS credentials
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: 'Gourav Sharma', // Your name
+      };
+
+      await emailjs.send(
+        'service_17xhzrb', // Replace with your EmailJS service ID
+        'template_82ni4fz', // Replace with your EmailJS template ID
+        templateParams,
+        '_2SwbKyKXQSW_sG57' // Replace with your EmailJS public key
+      );
+
       toast({
-        title: "Message sent!",
+        title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
       
@@ -37,9 +52,15 @@ const Contact = () => {
         email: '',
         message: ''
       });
-      
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again later or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (

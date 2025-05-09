@@ -76,6 +76,17 @@ const Skills = () => {
 
       ]
     },
+    {
+      id: 'Linguistics',
+      title: 'Linguistics',
+      skills: [
+        { name: 'English', level: 99, color: '#f05032' },
+        { name: 'Hindi', level: 99, color: '#2496ed' },
+        { name: 'Japanese', level: 70, color: '#ff9900' },
+        { name: 'Spanish', level: 70, color: '#4caf50' },
+       
+      ]
+    },
   ];
   
   return (
