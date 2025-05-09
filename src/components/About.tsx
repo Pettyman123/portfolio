@@ -24,7 +24,7 @@ const About = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <a href="src/public/resume.pdf" target="_blank" rel="noopener noreferrer" download>
+                <a href="public/resume.pdf" target="_blank" rel="noopener noreferrer" download>
                   <Button className="bg-custom-bright-purple hover:bg-custom-purple">
                     Download Resume
                   </Button>
@@ -40,7 +40,7 @@ const About = () => {
             <div className="relative">
               <div className="aspect-square w-full max-w-md mx-auto overflow-hidden rounded-lg border-4 border-custom-bright-purple shadow-xl">
                 <img 
-                  src="src/public/me.png" 
+                  src="public/me.png" 
                   alt="Gourav Sharma" 
                   className="w-full h-full object-cover"
                 />
